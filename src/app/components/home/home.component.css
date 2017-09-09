@@ -20,8 +20,13 @@
 }
 
 .navbar {
-  background-color: rgba(0,0,0, 0.8);
+  background: linear-gradient(to bottom, rgba(0,0,0,.8) 0%, rgba(0,0,0,.0) 100%);
   font-size: 1.2em;
+}
+
+.navbar.fixed-bottom {
+  background: linear-gradient(to top, rgba(0,0,0,.8) 0%, rgba(0,0,0,.2) 100%);
+  font-size: 1em;
 }
 
 .overlay {
