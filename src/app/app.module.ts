@@ -10,6 +10,8 @@ import { NewsfeedComponent } from './components/newsfeed/newsfeed.component';
 import { NewsfeedListComponent } from './components/newsfeed/newsfeed-list/newsfeed-list.component';
 import { NewsfeedItemComponent } from './components/newsfeed/newsfeed-item/newsfeed-item.component';
 import { AboutComponent } from './components/about/about.component';
+import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -26,7 +28,9 @@ const appRoutes: Routes = [
     NewsfeedComponent,
     NewsfeedListComponent,
     NewsfeedItemComponent,
-    AboutComponent
+    AboutComponent,
+    LeftSidebarComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

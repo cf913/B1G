@@ -1,0 +1,11 @@
+.navbar {
+  border-bottom: 3px solid slategrey;
+  background-color: #444;
+}
+.navbar .nav-item .nav-link{
+  color: white;
+}
+
+.form-control {
+  width: 500px;
+}
