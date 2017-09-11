@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -12,12 +11,16 @@ import { NewsfeedItemComponent } from './components/newsfeed/newsfeed-item/newsf
 import { AboutComponent } from './components/about/about.component';
 import { LeftSidebarComponent } from './components/left-sidebar/left-sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FriendsListComponent } from './components/player/friends-list/friends-list.component';
+import { FriendsListItemComponent } from './components/player/friends-list-item/friends-list-item.component';
+import { PlayerProfileComponent } from './components/player/player-profile/player-profile.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SettingsComponent } from './components/player/settings/settings.component';
+import { ChatComponent } from './components/player/chat/chat.component';
+import { PlayerService } from './services/player.service';
 
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'player/:id', component: PlayerComponent},
-  {path: 'main', component: MainComponent}
-];
+
 
 @NgModule({
   declarations: [
@@ -30,13 +33,19 @@ const appRoutes: Routes = [
     NewsfeedItemComponent,
     AboutComponent,
     LeftSidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    FriendsListComponent,
+    FriendsListItemComponent,
+    PlayerProfileComponent,
+    SettingsComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

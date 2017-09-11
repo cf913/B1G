@@ -1,3 +1,19 @@
-<p>
-  player works!
-</p>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/main', {outlets: {player:'profile'}}]"><i class="fa fa-user-circle-o"></i> <span id="player">{{ player_name }}</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/main', {outlets: {player:'chat'}}]"><i class="fa fa-comments"></i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/main', {outlets: {player:'friends'}}]"><i class="fa fa-users"></i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"[routerLink]="['/main', {outlets: {player:'settings'}}]"><i class="fa fa-gear"></i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"><i class="fa fa-ellipsis-h"></i></a>
+  </li>
+</ul>
+
+<router-outlet name="player"></router-outlet>
