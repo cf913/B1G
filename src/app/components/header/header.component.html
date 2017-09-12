@@ -1,26 +1,18 @@
-<nav class="navbar navbar-expand-md py-0">
-  <a class="navbar-brand" routerLink="/">B1G</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/main">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" >Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" >Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline m-auto">
-      <i class="fa fa-search"></i>
-      <input class="form-control-sm" type="text" placeholder="Jump to..." aria-label="Search">
-      <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
-    </form>
+<div class="ui inverted menu">
+  <div class="header item">
+    <a routerLink="/">B1G</a>
   </div>
-</nav>
+  <div class="active item"><i class="home icon"></i> Home</div>
+  <a class="item" routerLink="/about"><i class="file text icon"></i> About</a>
+
+  <div class="right menu">
+    <div class="item">
+      <div class="ui transparent inverted icon input">
+        <i class="search icon"></i>
+        <input type="text" placeholder="Search">
+      </div>
+    </div>
+    <a class="item"><i class="options icon"></i> Settings</a>
+  </div>
+</div>
 

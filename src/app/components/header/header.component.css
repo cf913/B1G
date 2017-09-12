@@ -1,20 +1,3 @@
-
-.navbar {
-  border-bottom: 5px solid slategrey;
-  background-color: #444;
-}
-.navbar .nav-item .nav-link{
-  font-size: 0.9em;
-  color: white;
-}
-
-.form-control-sm {
-  width: 400px;
-  height: 30px;
-}
-
-i {
-  color: white;
-  font-size: 1.5em;
-  margin-right: 10px;
+.ui.inverted.menu {
+  border-radius: 0;
 }
