@@ -1,12 +1,23 @@
 :host {
   display: block;
-  border: 1px solid lightgray;
+  min-height: 500px;
+  height: 80vh;
+  background-color: #f4f4f4;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.menu {
+  border-radius: 0;
 }
 
-a.item {
-  width: 20%;
+.menu a.item {
+  width: auto;
+  border-radius: 0;
+}
+
+.menu a.item.active {
+  color: blue;
 }
 
 .container {
-  background-color: #333333;
+  padding: 14px;
 }

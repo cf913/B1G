@@ -19,6 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { SettingsComponent } from './components/player/settings/settings.component';
 import { ChatComponent } from './components/player/chat/chat.component';
 import { PlayerService } from './services/player.service';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
@@ -39,7 +41,9 @@ import { PlayerService } from './services/player.service';
     FriendsListItemComponent,
     PlayerProfileComponent,
     SettingsComponent,
-    ChatComponent
+    ChatComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
