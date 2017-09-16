@@ -14,8 +14,11 @@ export class AuthGuard implements CanActivate {
             if (!auth) {
                 this.router.navigate(['/home/login']);
                 return false;
+            } else if (auth && !this.afAuth.auth.currentUser.emailVerified) {
+                this.router.navigate(['/home/verify']);
+                return false;
             } else {
-                return true;
+              return true;
             }
         });
     }

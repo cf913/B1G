@@ -3,4 +3,6 @@ body, html {
   width: 100%;
   margin: 0;
   background: #1B1E21;
+  color: #f4f4f4;
+  font-size: 14px;
 }

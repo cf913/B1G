@@ -28,6 +28,14 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       this.afAuth.auth.createUserWithEmailAndPassword(email, password)
         .then(userData => {
+          const user = this.afAuth.auth.currentUser;
+          user.sendEmailVerification().then(
+            (success) => {console.log('please verify your email')}
+          ).catch(
+            (err) => {
+              return reject(err);
+            }
+          );
           return resolve(userData);
         }, err => {
           return reject(err);

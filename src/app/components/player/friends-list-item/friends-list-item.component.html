@@ -1,9 +1,8 @@
-<a style="cursor: pointer" class="list-group-item clearfix">
-  <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ player.name }}</h4>
-    <p class="list-group-item-text">{{ player.description }}</p>
+
+  <div class="item">
+    <img class="ui avatar image" src={{player.imagePath}}>
+    <div class="content">
+      <a class="header">{{ player.name }}</a>
+      <div class="description">Last seen watching <a><b>feeding like a pro</b></a> just now.</div>
+    </div>
   </div>
-  <span class="pull-right">
-        <img src={{player.imagePath}} alt="" class="img-responsive" style="height:50px">
-      </span>
-</a>

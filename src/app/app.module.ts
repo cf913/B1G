@@ -27,6 +27,7 @@ import { AppRoutingModule } from './app-routing.module';
 // SERVICES
 import { PlayerService } from './services/player.service';
 import { PostService } from './services/post.service';
+import { FirebaseService } from './services/firebase.service';
 // GUARDS
 import { AuthGuard } from './guards/authgard';
 // FIREBASE
@@ -35,6 +36,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './services/auth.service';
+import { VerifyComponent } from './components/verify/verify.component';
 
 
 export const firebaseConfig = {
@@ -67,7 +69,8 @@ export const firebaseConfig = {
     ChatComponent,
     LoginComponent,
     RegisterComponent,
-    HomeTitleComponent
+    HomeTitleComponent,
+    VerifyComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,8 @@ export const firebaseConfig = {
     PlayerService,
     PostService,
     AuthService,
-    AuthGuard
+    AuthGuard,
+    FirebaseService
   ],
   bootstrap: [AppComponent]
 })

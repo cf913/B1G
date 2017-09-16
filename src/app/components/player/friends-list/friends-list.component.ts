@@ -9,7 +9,7 @@ import { PlayerService } from '../../../services/player.service';
 })
 export class FriendsListComponent implements OnInit {
 
-  players: any[];
+  players: Player[];
   constructor(private playerService: PlayerService) { }
 
   ngOnInit() {

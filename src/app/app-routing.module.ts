@@ -12,6 +12,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HomeTitleComponent } from './components/home/home-title/home-title.component';
 import { AuthGuard } from './guards/authgard';
+import { VerifyComponent } from './components/verify/verify.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
       {path: '', component: HomeTitleComponent, pathMatch: 'full'},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
+      {path: 'verify', component: VerifyComponent},
     ]
   },
 
