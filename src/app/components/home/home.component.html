@@ -15,17 +15,20 @@
     <a class="item" routerLink="/main"><i class="home icon"></i> Home</a>
     <a class="item" routerLink="/about"><i class="file text icon"></i> About</a>
     <div class="right menu">
-      <a class="item" routerLink="/register"><i class="plus icon"></i> Register</a>
-      <a class="item" routerLink="/login"><i class="user circle outline icon"></i> Login</a>
+      <a class="item" routerLink="register" *ngIf="!isLoggedIn"><i class="plus icon"></i> Register</a>
+      <a class="item" routerLink="login" *ngIf="!isLoggedIn"><i class="user circle outline icon"></i> Login</a>
+      <a class="item" routerLink="home" *ngIf="isLoggedIn" (click)="onLogoutClick()"><i class="user circle outline icon"></i> Logout</a>
     </div>
   </div>
 </div>
 
 <header id="showcase">
-  <h1>B1G Dota 2</h1>
-  <p class="lead">DotA is life, life is DotA. Yes, cyka blyat. Noob fuck feed at times. Go mid! Go mid! No courrier, where is Pudge?</p>
-  <a routerLink="/main" class="button">Get Started</a>
+  <!--<h1>B1G Dota 2</h1>-->
+  <!--<p class="lead">DotA is life, life is DotA. Yes, cyka blyat. Noob fuck feed at times. Go mid! Go mid! No courrier, where is Pudge?</p>-->
+  <!--<a routerLink="/main" class="button">Get Started</a>-->
   <div id="overlay"></div>
+  <router-outlet></router-outlet>
+
 </header>
 
 </body>

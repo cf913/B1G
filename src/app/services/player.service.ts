@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { Player } from '../components/player/player.model';
+import { Player } from '../models/player.model';
 
 @Injectable()
 export class PlayerService {
@@ -17,6 +17,7 @@ export class PlayerService {
       'http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/fe/fe88d7131f00b2bbc23f4be7d025b13bc45c3c46_full.jpg'
     )
   ];
+
 
   getPlayers() {
     return this.players.slice();

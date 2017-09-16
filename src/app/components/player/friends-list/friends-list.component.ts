@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from '../player.model';
+import { Player } from '../../../models/player.model';
 import { PlayerService } from '../../../services/player.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { PlayerService } from '../../../services/player.service';
 })
 export class FriendsListComponent implements OnInit {
 
-  players: Player[];
+  players: any[];
   constructor(private playerService: PlayerService) { }
 
   ngOnInit() {

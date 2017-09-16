@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
+// COMPONENTS
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { PlayerComponent } from './components/player/player.component';
@@ -15,13 +17,34 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FriendsListComponent } from './components/player/friends-list/friends-list.component';
 import { FriendsListItemComponent } from './components/player/friends-list-item/friends-list-item.component';
 import { PlayerProfileComponent } from './components/player/player-profile/player-profile.component';
-import { AppRoutingModule } from './app-routing.module';
 import { SettingsComponent } from './components/player/settings/settings.component';
 import { ChatComponent } from './components/player/chat/chat.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { HomeTitleComponent } from './components/home/home-title/home-title.component';
+// ROUTES
+import { AppRoutingModule } from './app-routing.module';
+// SERVICES
 import { PlayerService } from './services/player.service';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { PostService } from './services/post.service';
+// GUARDS
+import { AuthGuard } from './guards/authgard';
+// FIREBASE
+import { AngularFireModule } from 'angularfire2';
+// New imports to update based on AngularFire2 version 4
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthService } from './services/auth.service';
 
+
+export const firebaseConfig = {
+    apiKey: 'AIzaSyA3zEij56emhYzo6H4e-bp056plGmxZyYk',
+    authDomain: 'synerg-b1g.firebaseapp.com',
+    databaseURL: 'https://synerg-b1g.firebaseio.com',
+    projectId: 'synerg-b1g',
+    storageBucket: 'synerg-b1g.appspot.com',
+    messagingSenderId: '53976675086'
+};
 
 
 @NgModule({
@@ -43,13 +66,24 @@ import { RegisterComponent } from './components/register/register.component';
     SettingsComponent,
     ChatComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeTitleComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
-  providers: [PlayerService],
+  providers: [
+    PlayerService,
+    PostService,
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

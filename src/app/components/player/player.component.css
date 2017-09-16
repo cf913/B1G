@@ -1,22 +1,51 @@
 :host {
   display: block;
   min-height: 500px;
+  min-width: 210px;
   height: 80vh;
-  background-color: #f4f4f4;
+  background-color: #2F363D;
   box-shadow: 0 1px 1px rgba(0,0,0,0.3);
 }
 .menu {
-  border-radius: 0;
+  border-radius: 3px 3px 0 0;
+  box-shadow: none;
+  border: none;
+  background-color: #A83806;
 }
 
 .menu a.item {
-  width: auto;
+  border-radius: 3px;
+  color: white;
+  transition: background .3s;
+}
+
+.menu a.item:hover {
+  background: rgba(0,0,0,.3);
+  font-weight: 400;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+}
+
+.ui.menu .active.item {
+  background: rgba(0,0,0,.3);
+  font-weight: 400;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+}
+
+.ui.menu .active.item:hover {
+  color: white;
   border-radius: 0;
 }
 
-.menu a.item.active {
-  color: blue;
+.ui.pointing.menu .active.item:after {
+  background-color: rgb(50, 250, 0);
+  border: none;
 }
+
+
 
 .container {
   padding: 14px;

@@ -1,0 +1,48 @@
+
+  <div class="ui middle aligned center aligned grid">
+    <div class="column">
+      <h1>
+        Register a new Account
+      </h1>
+
+      <form class="ui large form" (submit)="onSubmit()">
+        <div class="ui raised segment">
+          <!--<div class="field">-->
+            <!--<div class="ui left icon input">-->
+              <!--<i class="user icon"></i>-->
+              <!--<input type="text" name="username" placeholder="Username" ngModel>-->
+            <!--</div>-->
+          <!--</div>-->
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="envelope icon"></i>
+              <input type="text" name="email" [(ngModel)]="email" placeholder="E-mail address">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input type="password" name="password" [(ngModel)]="confirm_password" placeholder="Confirm Password" >
+            </div>
+          </div>
+          <div class="ui red message" *ngIf="error">{{ message }}</div>
+          <button class="ui fluid large blue submit button" type="submit">Register</button>
+        </div>
+
+
+
+      </form>
+
+      <div class="ui message">
+        Already have an account? <a routerLink="/home/login"> Sign in</a>
+      </div>
+      <a routerLink="/home" id="back"><i class="angle double left icon"></i>Back</a>
+    </div>
+  </div>
+

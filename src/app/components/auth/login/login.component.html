@@ -1,25 +1,25 @@
-<header id="showcase">
+
   <div class="ui middle aligned center aligned grid">
     <div class="column">
       <h1>
           Log-in to your account
       </h1>
 
-      <form class="ui large form">
+      <form class="ui large form" (submit)="onSubmit()">
         <div class="ui raised segment">
           <div class="field">
             <div class="ui left icon input">
               <i class="user icon"></i>
-              <input type="text" name="email" placeholder="E-mail address">
+              <input type="text" name="email" placeholder="E-mail address" [(ngModel)]="email">
             </div>
           </div>
           <div class="field">
             <div class="ui left icon input">
               <i class="lock icon"></i>
-              <input type="password" name="password" placeholder="Password">
+              <input type="password" name="password" placeholder="Password" [(ngModel)]="password">
             </div>
           </div>
-          <div class="ui fluid large blue submit button">Login</div>
+          <input type="submit" class="ui fluid large blue submit button" value="Login">
         </div>
 
         <div class="ui error message"></div>
@@ -27,10 +27,9 @@
       </form>
 
       <div class="ui message">
-        New to us? <a routerLink="/register"> Sign Up</a>
+        New to us? <a routerLink="/home/register"> Sign Up</a>
       </div>
+      <a routerLink="/home" id="back"><i class="angle double left icon"></i>Back</a>
     </div>
   </div>
-  <div id="overlay"></div>
 
-</header>

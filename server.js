@@ -2,11 +2,13 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser')
+const mongoose = require('mongoose')
 
 // Get our API routes
 const api = require('./server/routes/api')
 
 const app = express()
+mongoose.connect('mongodb://user:password@ds044689.mlab.com:44689/b1g-app')
 
 // Parsers for POST data
 app.use(bodyParser.json())

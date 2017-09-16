@@ -1,3 +1,6 @@
 .ui.inverted.menu {
   border-radius: 0;
+  background: linear-gradient(45deg, #598307 0%, #598307 50%, #A83806 50%, #A83806 100%);
+  /*background: #A83806;*/
+  box-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }

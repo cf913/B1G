@@ -8,19 +8,25 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { SettingsComponent } from './components/player/settings/settings.component';
 import { ChatComponent } from './components/player/chat/chat.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { HomeTitleComponent } from './components/home/home-title/home-title.component';
+import { AuthGuard } from './guards/authgard';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-
-  // LOGIN - REGISTER
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  // HOME
+  {path: 'home', component: HomeComponent,
+    children: [
+      // LOGIN - REGISTER
+      {path: '', component: HomeTitleComponent, pathMatch: 'full'},
+      {path: 'login', component: LoginComponent},
+      {path: 'register', component: RegisterComponent},
+    ]
+  },
 
   // MAIN PAGE
-  {path: 'main', component: MainComponent,
+  {path: 'main', component: MainComponent, canActivate: [AuthGuard],
     children: [
       {path: '', outlet: 'player', component: PlayerProfileComponent, pathMatch: 'full'},
       {path: '', outlet: 'news', component: NewsfeedListComponent, pathMatch: 'full'},
@@ -31,7 +37,8 @@ const appRoutes: Routes = [
       {path: 'settings', outlet: 'player', component: SettingsComponent},
       // NEWS
       {path: 'newsfeed', outlet: 'news', component: NewsfeedListComponent}
-    ]},
+    ]
+  },
 
   {path: 'about', component: AboutComponent}
 ];

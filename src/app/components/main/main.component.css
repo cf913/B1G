@@ -1,10 +1,46 @@
 :host {
   display: block;
-  background-color: #e4e4e4;
+  min-width: 1100px;
+  /*background-color: #e4e4e4;*/
+  /*background: linear-gradient(to bottom, rgba(0,50,100,0.6) 0%, rgba(0,50,100,0.6) 100%);*/
+  /*background: url(../../../assets/img/arena.jpg);*/
+  background: #1B1E21;
 }
 
 .column {
   margin: 0;
+}
+
+#left, #mid, #right {
+  border-radius: 3px;
+}
+
+#left {
+  animation: slideInFromLeft ease-in-out .6s;
+}
+
+#right {
+  animation: slideInFromRight ease-in-out .6s;
+}
+
+
+/* ANIMATIONS */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 

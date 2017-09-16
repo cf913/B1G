@@ -1,8 +1,8 @@
 :host {
   display: block;
   min-height: 600px;
-  height: 88vh;
-  background-color: #f4f4f4;
+  height: 100vh;
+  background-color: #2F363D;
   box-shadow: 0 1px 1px rgba(0,0,0,0.3);
   padding: 14px;
   margin-left: -14px;
