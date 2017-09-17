@@ -13,6 +13,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { HomeTitleComponent } from './components/home/home-title/home-title.component';
 // import { AuthGuard } from './guards/authgard';
 import { VerifyComponent } from './components/verify/verify.component';
+import { NewsfeedDetailComponent } from './components/newsfeed/newsfeed-detail/newsfeed-detail.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -30,15 +31,16 @@ const appRoutes: Routes = [
   // MAIN PAGE
   {path: 'main', component: MainComponent,
     children: [
-      {path: '', outlet: 'player', component: PlayerProfileComponent, pathMatch: 'full'},
-      {path: '', outlet: 'news', component: NewsfeedListComponent, pathMatch: 'full'},
+      {path: '', outlet: 'player', component: PlayerProfileComponent},
+      {path: '', outlet: 'news', component: NewsfeedListComponent},
       // PLAYER
       {path: 'profile', outlet: 'player', component: PlayerProfileComponent},
       {path: 'friends', outlet: 'player', component: FriendsListComponent},
       {path: 'chat', outlet: 'player', component: ChatComponent},
       {path: 'settings', outlet: 'player', component: SettingsComponent},
       // NEWS
-      {path: 'newsfeed', outlet: 'news', component: NewsfeedListComponent}
+      {path: 'newsfeed', outlet: 'news', component: NewsfeedListComponent},
+      {path: 'newsfeed/:id', outlet: 'news', component: NewsfeedDetailComponent},
     ]
   },
 

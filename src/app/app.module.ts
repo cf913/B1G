@@ -33,6 +33,7 @@ import { PostService } from './services/post.service';
 import { AuthService } from './services/auth.service';
 import { VerifyComponent } from './components/verify/verify.component';
 import { NewsfeedNewComponent } from './components/newsfeed/newsfeed-new/newsfeed-new.component';
+import { NewsfeedDetailComponent } from './components/newsfeed/newsfeed-detail/newsfeed-detail.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { NewsfeedNewComponent } from './components/newsfeed/newsfeed-new/newsfee
     RegisterComponent,
     HomeTitleComponent,
     VerifyComponent,
-    NewsfeedNewComponent
+    NewsfeedNewComponent,
+    NewsfeedDetailComponent
   ],
   imports: [
     BrowserModule,

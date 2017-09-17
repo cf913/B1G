@@ -14,11 +14,15 @@
 }
 
 .menu a.item {
-  width:20%;
   border-radius: 3px;
   color: white;
   transition: background .3s;
 }
+
+.menu a.item i {
+  font-size: 0.9em;
+}
+
 
 .menu a.item:hover {
   background: rgba(0,0,0,.3);
