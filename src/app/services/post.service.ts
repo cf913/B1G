@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class PostService {
-  posts: Post[] = [];
+  private posts: Post[] = [];
 
   constructor(private http: Http) { }
 
@@ -28,7 +28,21 @@ export class PostService {
   }
 
   getPosts() {
-    return this.posts;
+    return this.http.get('http://localhost:3000/post')
+      .map((response: Response) => {
+        const posts = response.json().obj;
+        const transformedPost: Post[] = [];
+        for (const post of posts) {
+          transformedPost.push(new Post(
+            post.content,
+            post.author,
+            post.id
+          ));
+        }
+        this.posts = transformedPost;
+        return transformedPost;
+      })
+      .catch((error: Response) => Observable.throw(error.json()));
   }
 
 }

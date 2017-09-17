@@ -3,7 +3,26 @@ const router = express.Router()
 
 let Post = require('../../models/post')
 
-/* GET api listing. */
+// Get post from db
+router.get('/', (req, res) => {
+  Post.find()
+    .exec((err, posts) => {
+      if (err) {
+        return res.status(500).json({
+          title: 'An error occured',
+          error: err
+        })
+      } else {
+        res.status(201).json({
+          message: 'Saved Post',
+          obj: posts
+        })
+      }
+    })
+})
+
+
+/* Save post to db*/
 router.post('/', (req, res) => {
   let post = new Post({
     content: req.body.content,
