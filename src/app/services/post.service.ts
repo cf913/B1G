@@ -14,7 +14,8 @@ export class PostService {
     console.log(newpost);
     const body = JSON.stringify(newpost);
     const headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.post('http://localhost:3000/post', body, {headers: headers})
+    // return this.http.post('http://localhost:3000/post', body, {headers: headers})
+    return this.http.post('http://synerg.herokuapp.com/post', body, {headers: headers})
       .map((response: Response) => {
         const result = response.json();
         const post = new Post(
@@ -28,7 +29,8 @@ export class PostService {
   }
 
   getPosts() {
-    return this.http.get('http://localhost:3000/post')
+    return this.http.get('http://synerg.herokuapp.com/post')
+    // return this.http.get('http://localhost:3000/post')
       .map((response: Response) => {
         const posts = response.json().obj;
         const transformedPost: Post[] = [];

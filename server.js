@@ -10,6 +10,7 @@ const post = require('./server/routes/post')
 
 const app = express()
 mongoose.connect('mongodb://user:password@ds044689.mlab.com:44689/b1g-app', (err) => {
+// mongoose.connect('mongodb://127.0.0.1:27017/synerG', (err) => {
   if (err) {
     console.log('db not connected')
   } else {
