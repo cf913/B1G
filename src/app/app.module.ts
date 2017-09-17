@@ -32,6 +32,7 @@ import { PostService } from './services/post.service';
 
 import { AuthService } from './services/auth.service';
 import { VerifyComponent } from './components/verify/verify.component';
+import { NewsfeedNewComponent } from './components/newsfeed/newsfeed-new/newsfeed-new.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { VerifyComponent } from './components/verify/verify.component';
     LoginComponent,
     RegisterComponent,
     HomeTitleComponent,
-    VerifyComponent
+    VerifyComponent,
+    NewsfeedNewComponent
   ],
   imports: [
     BrowserModule,

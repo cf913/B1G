@@ -4,7 +4,7 @@ let mongooseValidator = require('mongoose-unique-validator')
 
 let schema = new Schema({
   content: {type: String, required: true},
-  author: {type: Schema.Types.ObjectId, ref: 'Team', unique: true}
+  author: {type: String, unique: true}
 })
 
 schema.plugin(mongooseValidator)

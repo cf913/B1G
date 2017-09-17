@@ -1,10 +1,8 @@
-import { Team } from './team.model';
-
 export class Post {
   public content: string;
-  public author: Team;
+  public author: string;
 
-  constructor(content: string, author: Team) {
+  constructor(content: string, author: string) {
     this.content = content;
     this.author = author;
 

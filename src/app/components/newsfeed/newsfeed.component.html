@@ -1,6 +1,9 @@
+<app-newsfeed-new></app-newsfeed-new>
+
 <p>
   newsfeed works!
 </p>
 
 <a [routerLink]="['/main', {outlets: {news:'newsfeed'}}]">NewsFeed Link</a>
+
 <router-outlet name="news"></router-outlet>

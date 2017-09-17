@@ -6,9 +6,16 @@ const mongoose = require('mongoose')
 
 // Get our API routes
 const api = require('./server/routes/api')
+const post = require('./server/routes/post')
 
 const app = express()
-mongoose.connect('mongodb://user:password@ds044689.mlab.com:44689/b1g-app')
+mongoose.connect('mongodb://127.0.0.1:27017/synerG', (err) => {
+  if (err) {
+    console.log('db not connected')
+  } else {
+    console.log('CONNECTED TO SYNERG!')
+  }
+})
 
 // Parsers for POST data
 app.use(bodyParser.json())
@@ -18,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'dist')))
 
 // Set our api routes
+app.use('/post', post)
 app.use('/api', api)
 
 // Catch all other routes and return the index file
