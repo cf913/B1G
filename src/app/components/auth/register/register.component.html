@@ -7,16 +7,16 @@
 
       <form class="ui large form" (submit)="onSubmit()">
         <div class="ui raised segment">
-          <!--<div class="field">-->
-            <!--<div class="ui left icon input">-->
-              <!--<i class="user icon"></i>-->
-              <!--<input type="text" name="username" placeholder="Username" ngModel>-->
-            <!--</div>-->
-          <!--</div>-->
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input type="text" name="username" placeholder="Username" [(ngModel)]="username">
+            </div>
+          </div>
           <div class="field">
             <div class="ui left icon input">
               <i class="envelope icon"></i>
-              <input type="text" name="email" [(ngModel)]="email" placeholder="E-mail address">
+              <input type="email" name="email" [(ngModel)]="email" placeholder="E-mail address">
             </div>
           </div>
           <div class="field">

@@ -27,26 +27,11 @@ import { AppRoutingModule } from './app-routing.module';
 // SERVICES
 import { PlayerService } from './services/player.service';
 import { PostService } from './services/post.service';
-import { FirebaseService } from './services/firebase.service';
 // GUARDS
-import { AuthGuard } from './guards/authgard';
-// FIREBASE
-import { AngularFireModule } from 'angularfire2';
-// New imports to update based on AngularFire2 version 4
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+// import { AuthGuard } from './guards/authgard';
+
 import { AuthService } from './services/auth.service';
 import { VerifyComponent } from './components/verify/verify.component';
-
-
-export const firebaseConfig = {
-    apiKey: 'AIzaSyA3zEij56emhYzo6H4e-bp056plGmxZyYk',
-    authDomain: 'synerg-b1g.firebaseapp.com',
-    databaseURL: 'https://synerg-b1g.firebaseio.com',
-    projectId: 'synerg-b1g',
-    storageBucket: 'synerg-b1g.appspot.com',
-    messagingSenderId: '53976675086'
-};
 
 
 @NgModule({
@@ -76,17 +61,13 @@ export const firebaseConfig = {
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
+    HttpModule
   ],
   providers: [
     PlayerService,
     PostService,
-    AuthService,
-    AuthGuard,
-    FirebaseService
+    AuthService
+    // AuthGuard,
   ],
   bootstrap: [AppComponent]
 })

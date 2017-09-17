@@ -15,21 +15,9 @@ export class HomeComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.authService.getAuth()
-      .subscribe(auth => {
-        if (auth) {
-          this.isLoggedIn = true;
-          this.loggedInUser = auth.email;
-        } else {
-          this.isLoggedIn = false;
-        }
-      });
   }
 
   onLogoutClick() {
-    this.authService.logout();
-    console.log('You are logged out!');
-    this.router.navigate(['/home/']);
   }
 
 }

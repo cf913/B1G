@@ -18,15 +18,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.authService.login(this.email, this.password)
-      .then((res) => {
-        console.log('You are logged in');
-        this.router.navigate(['/main']);
-      })
-      .catch((err) => {
-       console.log(err.message);
-        this.router.navigate(['/home/login']);
-      });
   }
 
 }

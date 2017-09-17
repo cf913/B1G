@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-player-profile',
@@ -7,11 +6,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
   styleUrls: ['./player-profile.component.css']
 })
 export class PlayerProfileComponent implements OnInit {
-  user;
 
-  constructor(private afAuth: AngularFireAuth) {
-    this.user = afAuth.auth.currentUser;
-    console.log(this.user.emailVerified);
+  constructor() {
+
   }
 
   ngOnInit() {

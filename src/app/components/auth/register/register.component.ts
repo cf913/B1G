@@ -8,6 +8,7 @@ import { AuthService } from '../../../services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  username: string;
   email: string;
   password: string;
   confirm_password: string;
@@ -21,22 +22,6 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.password === this.confirm_password) {
-      this.authService.register(this.email, this.password)
-        .then(res => {
-          console.log('success');
-          this.router.navigate(['/main']);
-        })
-        .catch(err => {
-          this.error = true;
-          this.message = err.message;
-          console.log(err.message);
-          this.router.navigate(['/home/register']);
-        });
-    } else {
-      this.error = true;
-      this.message = 'Passwords do not match!';
-    }
   }
 
 }

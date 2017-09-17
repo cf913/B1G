@@ -11,7 +11,7 @@ import { ChatComponent } from './components/player/chat/chat.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HomeTitleComponent } from './components/home/home-title/home-title.component';
-import { AuthGuard } from './guards/authgard';
+// import { AuthGuard } from './guards/authgard';
 import { VerifyComponent } from './components/verify/verify.component';
 
 const appRoutes: Routes = [
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   },
 
   // MAIN PAGE
-  {path: 'main', component: MainComponent, canActivate: [AuthGuard],
+  {path: 'main', component: MainComponent,
     children: [
       {path: '', outlet: 'player', component: PlayerProfileComponent, pathMatch: 'full'},
       {path: '', outlet: 'news', component: NewsfeedListComponent, pathMatch: 'full'},

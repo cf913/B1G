@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Player } from '../../../models/player.model';
-import { FirebaseService } from '../../../services/firebase.service';
 
 @Component({
   selector: 'app-friends-list-item',
@@ -10,7 +9,7 @@ import { FirebaseService } from '../../../services/firebase.service';
 export class FriendsListItemComponent implements OnInit {
 
   @Input() player: Player;
-  constructor(private fire: FirebaseService) {}
+  constructor() {}
 
   ngOnInit() {
   }
