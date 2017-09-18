@@ -1,9 +1,9 @@
 <div class="ui mini left floated icon buttons">
-  <a [routerLink]="['/main', {outlets: {news: 'newsfeed'}}]" class="ui inverted grey button"><i class="angle left icon"></i></a>
+  <a [routerLink]="['/main', {outlets: {middle: 'newsfeed'}}]" class="ui inverted grey button"><i class="angle left icon"></i></a>
 </div>
 <div class="ui mini right floated icon buttons">
   <button class="ui orange button" (click)="onClickEdit()"><i class="edit icon"></i></button>
-  <button class="ui red button"><i class="trash icon"></i></button>
+  <button class="ui red button" (click)="onClickDelete()"><i class="trash icon"></i></button>
 </div>
 <div class="ui clearing"><br></div>
 

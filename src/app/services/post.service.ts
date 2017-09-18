@@ -78,4 +78,12 @@ export class PostService {
       .catch((error: Response) => Observable.throw(error.json()));
   }
 
+  deletePost(post: Post) {
+    this.posts.splice(this.posts.indexOf(post, 1));
+    return this.http.delete('http://synerg.herokuapp.com/post/' + post.postId)
+    // return this.http.delete('http://localhost:3000/post/' + post.postId)
+      .map((response: Response) => response.json())
+      .catch((error: Response) => Observable.throw(error.json()));
+  }
+
 }

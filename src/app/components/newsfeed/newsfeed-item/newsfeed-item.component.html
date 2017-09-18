@@ -1,7 +1,7 @@
 <div class="ui basic segment">
 
   <h3 class="ui left floated header">{{ post.author}} TODO: Format this</h3>
-  <button class="ui primary mini compact right floated button" [routerLink]="['/main', {outlets: {news: 'newsfeed/' + post.postId}}]" >Read More<i class="angle right icon"></i></button>
+  <button class="ui primary mini compact right floated button" [routerLink]="['/main', {outlets: {middle: 'newsfeed/' + post.postId}}]" >Read More<i class="angle right icon"></i></button>
   <div class="ui clearing divider"></div>
   <p>{{ post.content }}</p>
 

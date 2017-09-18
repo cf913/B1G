@@ -102,5 +102,32 @@ router.patch('/:id', (req, res) => {
     })
 })
 
+// Delete post
+router.delete('/:id', (req, res) => {
+  Post.findById(req.params.id)
+    .exec((err, post) => {
+      if (err) {
+        return res.status(500).json({
+          title: 'An error occured',
+          error: err
+        })
+      }
+      if (!post) {
+        return res.status(404).json({
+          title: 'Post not found',
+          error: 'Post not found'
+        })
+      }
+      post.remove((err) => {
+        if (err) {
+          return res.status(500).json({
+            title: 'An error occured',
+            error: err
+          })
+        }
+      })
+    })
+})
+
 
 module.exports = router

@@ -38,6 +38,8 @@ export class NewsfeedNewComponent implements OnInit {
         .subscribe(data => console.log(data), error => console.error(error));
       form.resetForm();
     }
+    // hide form
+    this.cancel.emit(false);
   }
 
   onClear(f: NgForm) {

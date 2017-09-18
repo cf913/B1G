@@ -2,10 +2,10 @@
   <div class="header item">
     <a routerLink="/">B1G</a>
   </div>
-  <a class="item" routerLink="/main" routerLinkActive="active"><i class="home icon"></i> Home</a>
-  <a class="item" routerLink="/about" routerLinkActive="active"><i class="newspaper icon"></i> News</a>
-  <a class="item" routerLink="/about" routerLinkActive="active"> Players</a>
-  <a class="item" routerLink="/main/news" routerLinkActive="active"> Teams</a>
+  <a class="item" routerLink="/main" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active"><i class="home icon"></i> Home</a>
+  <a class="item" [routerLink]="['/main', {outlets: {middle: 'newsfeed'}}]" routerLinkActive="active"><i class="newspaper icon"></i> News</a>
+  <a class="item" [routerLink]="['/main', {outlets: {middle: 'players'}}]" routerLinkActive="active"> Players</a>
+  <a class="item" [routerLink]="['/main', {outlets: {middle: 'teams'}}]" routerLinkActive="active"> Teams</a>
 
   <div class="right menu">
     <div class="item">

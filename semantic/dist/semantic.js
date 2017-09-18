@@ -8880,7 +8880,7 @@ $.fn.embed.settings = {
       type   : 'video',
       icon   : 'video play',
       domain : 'vimeo.com',
-      url    : '//player.vimeo.com/video/{id}',
+      url    : '//user.vimeo.com/video/{id}',
       parameters: function(settings) {
         return {
           api      : settings.api,
