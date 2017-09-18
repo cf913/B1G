@@ -11,6 +11,7 @@ import { PostService } from '../../../services/post.service';
 export class NewsfeedDetailComponent implements OnInit {
   id: string;
   post: Post;
+  new = false;
 
   constructor(public postService: PostService,
               public router: Router,
@@ -22,8 +23,24 @@ export class NewsfeedDetailComponent implements OnInit {
     // Get Client
     this.postService.getPost(this.id)
       .subscribe(post => {
-        this.post = post;
+        this.post = new Post(
+          post.content,
+          post.author,
+          post.postId
+        );
+        console.log('Post: ' + typeof(this.post));
       });
+  }
+
+  onClickEdit() {
+    if (!this.new) {
+      this.new = true;
+    }
+    this.postService.editPost(this.post);
+  }
+
+  onCancel(b) {
+    this.new = b;
   }
 
 }

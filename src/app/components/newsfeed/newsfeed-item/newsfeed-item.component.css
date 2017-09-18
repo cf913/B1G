@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  padding-top: 20px;
+}
+
+.text {
+  color: #f4f4f4;
+}
+
+.ui.clearing.divider {
+  margin-top: 7px;
+}

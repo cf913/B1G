@@ -1,12 +1,14 @@
 <form class="ui form" (ngSubmit)="onSubmit(f)" #f="ngForm">
   <div class="field">
     <label>Content</label>
-    <textarea type="text" name="content" ngModel required placeholder="Content..."></textarea>
+    <textarea type="text" name="content" [ngModel]="post?.content" required placeholder="Content..."></textarea>
   </div>
   <div class="field">
     <label>Author</label>
-    <input type="text" name="author" ngModel placeholder="Author..." required>
+    <input type="text" name="author" [ngModel]="post?.author" placeholder="Author..." required>
   </div>
+  <button class="ui red small button" type="button" (click)="onCancel()">Cancel</button>
+  <button class="ui orange small button" type="button" (click)="onClear(f)">Clear</button>
   <button class="ui primary small button" type="submit">Post</button>
 </form>
 <hr>

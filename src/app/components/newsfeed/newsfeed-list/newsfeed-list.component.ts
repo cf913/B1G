@@ -9,6 +9,7 @@ import { Post } from '../../../models/post.model';
 })
 export class NewsfeedListComponent implements OnInit {
   posts: Post[];
+  new = false;
 
   constructor(private postService: PostService) { }
 
@@ -17,6 +18,14 @@ export class NewsfeedListComponent implements OnInit {
       .subscribe((posts: Post[]) => {
         this.posts = posts;
       });
+  }
+
+  onClickNew() {
+    this.new = !this.new;
+  }
+
+  onCancel(b) {
+    this.new = b;
   }
 
 }

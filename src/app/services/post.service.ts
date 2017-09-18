@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Post } from '../models/post.model';
 import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/Rx';
@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Observable';
 export class PostService {
   private posts: Post[] = [];
   private post: Post;
+  postEdit = new EventEmitter<Post>();
 
   constructor(private http: Http) { }
 
@@ -20,7 +21,8 @@ export class PostService {
         const result = response.json();
         const post = new Post(
           result.obj.content,
-          result.obj.author);
+          result.obj.author,
+          result.obj._id);
         this.posts.push(post);
         return post;
       })
@@ -60,6 +62,19 @@ export class PostService {
         this.post = newPost;
         return newPost;
       })
+      .catch((error: Response) => Observable.throw(error.json()));
+  }
+
+  editPost(post: Post) {
+    this.postEdit.emit(post);
+  }
+
+  updatePost(post: Post) {
+    const body = JSON.stringify(post);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.patch('http://synerg.herokuapp.com/post/' + post.postId, body, {headers: headers})
+    // return this.http.patch('http://localhost:3000/post/' + post.postId, body, {headers: headers})
+      .map((response: Response) => response.json())
       .catch((error: Response) => Observable.throw(error.json()));
   }
 

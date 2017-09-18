@@ -1,4 +1,11 @@
-<p>
-  newsfeed-list works!
-  <app-newsfeed-item *ngFor="let post of posts" [post]="post"></app-newsfeed-item>
-</p>
+<!--<div class="ui mini left floated icon buttons">-->
+  <!--<a [routerLink]="['/main', {outlets: {news: 'newsfeed'}}]" class="ui inverted grey button"><i class="angle left icon"></i></a>-->
+<!--</div>-->
+<div class="ui mini right floated icon buttons">
+  <button class="ui primary button" (click)="onClickNew()"><i class="plus icon"></i></button>
+</div>
+<div class="ui clearing"><br></div>
+
+<app-newsfeed-new [hidden]="!new" (cancel)="onCancel($event)"></app-newsfeed-new>
+
+<app-newsfeed-item *ngFor="let post of posts" [post]="post"></app-newsfeed-item>
