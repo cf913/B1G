@@ -41,8 +41,10 @@ export class NewsfeedDetailComponent implements OnInit {
 
   onClickDelete() {
     this.postService.deletePost(this.post)
-      .subscribe(result => console.log(result));
-    this.router.navigate(['/main', {outlets: {middle: 'newsfeed'}}]);
+      .subscribe(result => {
+        console.log(result);
+        this.router.navigate(['/main', {outlets: {middle: 'newsfeed'}}]);
+      });
   }
 
   onCancel(b) {
