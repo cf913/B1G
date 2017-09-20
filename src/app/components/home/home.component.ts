@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  isLoggedIn: boolean;
   loggedInUser: string;
 
   constructor(private authService: AuthService,
@@ -18,6 +17,11 @@ export class HomeComponent implements OnInit {
   }
 
   onLogoutClick() {
+    this.authService.logout();
+    this.router.navigate(['/home']);
   }
 
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
+  }
 }

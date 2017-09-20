@@ -15,9 +15,9 @@
     <a class="item" routerLink="/main"><i class="home icon"></i> Home</a>
     <a class="item" routerLink="/about"><i class="file text icon"></i> About</a>
     <div class="right menu">
-      <a class="item" routerLink="register" *ngIf="!isLoggedIn"><i class="plus icon"></i> Register</a>
-      <a class="item" routerLink="login" *ngIf="!isLoggedIn"><i class="user circle outline icon"></i> Login</a>
-      <a class="item" routerLink="home" *ngIf="isLoggedIn" (click)="onLogoutClick()"><i class="user circle outline icon"></i> Logout</a>
+      <a class="item" routerLink="register" *ngIf="!isLoggedIn()"><i class="plus icon"></i> Register</a>
+      <a class="item" routerLink="login" *ngIf="!isLoggedIn()"><i class="user circle outline icon"></i> Login</a>
+      <a class="item" routerLink="home" *ngIf="isLoggedIn()" (click)="onLogoutClick()"><i class="user circle outline icon"></i> Logout</a>
     </div>
   </div>
 </div>

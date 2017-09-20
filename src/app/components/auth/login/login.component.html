@@ -5,18 +5,18 @@
           Log-in to your account
       </h1>
 
-      <form class="ui large form" (submit)="onSubmit()">
+      <form class="ui large form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
         <div class="ui raised segment">
           <div class="field">
             <div class="ui left icon input">
-              <i class="user icon"></i>
-              <input type="text" name="email" placeholder="E-mail address" [(ngModel)]="email">
+              <i class="envelope icon"></i>
+              <input type="email" id="email" placeholder="E-mail address" formControlName="email">
             </div>
           </div>
           <div class="field">
             <div class="ui left icon input">
               <i class="lock icon"></i>
-              <input type="password" name="password" placeholder="Password" [(ngModel)]="password">
+              <input type="password" id="password" placeholder="Password" formControlName="password">
             </div>
           </div>
           <input type="submit" class="ui fluid large blue submit button" value="Login">

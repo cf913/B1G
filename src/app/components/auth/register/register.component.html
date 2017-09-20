@@ -5,34 +5,34 @@
         Register a new Account
       </h1>
 
-      <form class="ui large form" (submit)="onSubmit()">
+      <form class="ui large form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
         <div class="ui raised segment">
           <div class="field">
             <div class="ui left icon input">
               <i class="user icon"></i>
-              <input type="text" name="username" placeholder="Username" [(ngModel)]="username">
+              <input type="text" placeholder="Username" id="username" formControlName="username">
             </div>
           </div>
           <div class="field">
             <div class="ui left icon input">
               <i class="envelope icon"></i>
-              <input type="email" name="email" [(ngModel)]="email" placeholder="E-mail address">
+              <input type="email" id="email" placeholder="E-mail address" formControlName="email">
             </div>
           </div>
           <div class="field">
             <div class="ui left icon input">
               <i class="lock icon"></i>
-              <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
+              <input type="password" id="password" placeholder="Password" formControlName="password">
             </div>
           </div>
           <div class="field">
             <div class="ui left icon input">
               <i class="lock icon"></i>
-              <input type="password" name="password" [(ngModel)]="confirm_password" placeholder="Confirm Password" >
+              <input type="password" id="confirm_password" placeholder="Confirm Password" formControlName="confirm_password" >
             </div>
           </div>
-          <div class="ui red message" *ngIf="error">{{ message }}</div>
-          <button class="ui fluid large blue submit button" type="submit">Register</button>
+          <!--<div class="ui red message" *ngIf="error">{{ message }}</div>-->
+          <button class="ui fluid large blue submit button" type="submit" [disabled]="!myForm.valid">Register</button>
         </div>
 
 

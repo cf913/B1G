@@ -9,7 +9,7 @@ import { Post } from '../../../models/post.model';
 })
 export class NewsfeedListComponent implements OnInit {
   posts: Post[];
-  new = false;
+  showForm = false;
 
   constructor(private postService: PostService) { }
 
@@ -21,11 +21,11 @@ export class NewsfeedListComponent implements OnInit {
   }
 
   onClickNew() {
-    this.new = !this.new;
+    this.showForm = !this.showForm;
   }
 
   onCancel(b) {
-    this.new = b;
+    this.showForm = b;
   }
 
 }

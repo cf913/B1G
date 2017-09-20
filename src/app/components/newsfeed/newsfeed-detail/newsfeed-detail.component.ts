@@ -9,32 +9,31 @@ import { PostService } from '../../../services/post.service';
   styleUrls: ['./newsfeed-detail.component.css']
 })
 export class NewsfeedDetailComponent implements OnInit {
-  id: string;
   post: Post;
-  new = false;
+  author: string;
+  content: string;
+  id: string;
+  showForm = false;
 
   constructor(public postService: PostService,
               public router: Router,
               public route: ActivatedRoute) { }
 
   ngOnInit() {
-    // Get ID
-    this.id = this.route.snapshot.params['id'];
     // Get Client
-    this.postService.getPost(this.id)
-      .subscribe(post => {
-        this.post = new Post(
-          post.content,
-          post.author,
-          post.postId
-        );
-        console.log('Post: ' + typeof(this.post));
+    this.postService.getPost(this.route.snapshot.params['id'])
+      .subscribe((post: Post) => {
+        this.post = post;
+        // fixes a timing error
+        this.author = post.author;
+        this.content = post.content;
+        this.id = post.userId;
       });
   }
 
   onClickEdit() {
-    if (!this.new) {
-      this.new = true;
+    if (!this.showForm) {
+      this.showForm = true;
     }
     this.postService.editPost(this.post);
   }
@@ -43,12 +42,15 @@ export class NewsfeedDetailComponent implements OnInit {
     this.postService.deletePost(this.post)
       .subscribe(result => {
         console.log(result);
+        this.router.navigate(['/main', {outlets: {middle: 'newsfeed'}}]);
       });
-    this.router.navigate(['/main', {outlets: {middle: 'newsfeed'}}]);
+
+} postIsUsers() {
+    return localStorage.getItem('userId') === this.id;
   }
 
   onCancel(b) {
-    this.new = b;
+    this.showForm = b;
   }
 
 }
