@@ -18,8 +18,8 @@ export class PostService {
     const token = localStorage.getItem('token')
       ? '?token=' + localStorage.getItem('token')
       : '';
-    // return this.http.post('http://synerg.herokuapp.com/post', body, {headers: headers})
-    return this.http.post('/post' + token, body, {headers: headers})
+    return this.http.post('http://synerg.herokuapp.com/post' + token, body, {headers: headers})
+    // return this.http.post('/post' + token, body, {headers: headers})
       .map((response: Response) => {
         const result = response.json();
         const post = new Post(
@@ -35,8 +35,8 @@ export class PostService {
   }
 
   getPosts() {
-    // return this.http.get('http://synerg.herokuapp.com/post')
-    return this.http.get('/post')
+    return this.http.get('http://synerg.herokuapp.com/post')
+    // return this.http.get('/post')
       .map((response: Response) => {
         const posts = response.json().obj;
         const transformedPost: Post[] = [];
@@ -55,8 +55,8 @@ export class PostService {
   }
 
   getPost(id: string) {
-    // return this.http.get('http://synerg.herokuapp.com/post/' + id)
-    return this.http.get('/post/' + id)
+    return this.http.get('http://synerg.herokuapp.com/post/' + id)
+    // return this.http.get('/post/' + id)
       .map((response: Response) => {
         const post = response.json().obj;
         const newPost: Post = new Post(
@@ -81,8 +81,8 @@ export class PostService {
     const token = localStorage.getItem('token')
       ? '?token=' + localStorage.getItem('token')
       : '';
-    // return this.http.patch('http://synerg.herokuapp.com/post/' + post.postId, body, {headers: headers})
-    return this.http.patch('/post/' + post.postId + token, body, {headers: headers})
+    return this.http.patch('http://synerg.herokuapp.com/post/' + post.postId + token, body, {headers: headers})
+    // return this.http.patch('/post/' + post.postId + token, body, {headers: headers})
       .map((response: Response) => response.json())
       .catch((error: Response) => Observable.throw(error.json()));
   }
@@ -92,8 +92,8 @@ export class PostService {
     const token = localStorage.getItem('token')
       ? '?token=' + localStorage.getItem('token')
       : '';
-    // return this.http.delete('http://synerg.herokuapp.com/post/' + post.postId)
-    return this.http.delete('/post/' + post.postId + token)
+    return this.http.delete('http://synerg.herokuapp.com/post/' + post.postId + token)
+    // return this.http.delete('/post/' + post.postId + token)
       .map((response: Response) => response.json())
       .catch((error: Response) => Observable.throw(error.json()));
   }
