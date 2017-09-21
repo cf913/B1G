@@ -17,6 +17,7 @@ export class NewsfeedListComponent implements OnInit {
     this.postService.getPosts()
       .subscribe((posts: Post[]) => {
         this.posts = posts;
+        console.log('getPosts: ' + posts);
       });
   }
 
