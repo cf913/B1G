@@ -122,6 +122,7 @@ router.patch('/:id', (req, res) => {
       }
       console.log(req.body.userId)
       post.content = req.body.content;
+      // PROBLEM WAS HERE
       post.author = req.body.userId;
       post.save((err, result) => {
         if (err) {
