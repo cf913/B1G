@@ -30,8 +30,12 @@ export class NewsfeedNewComponent implements OnInit {
       this.post.content = form.value.content;
       this.post.author = form.value.author;
       this.postService.updatePost(this.post)
-        .subscribe(result => console.log(result));
+        .subscribe(result => {
+          console.log(result);
+        });
       this.post = null;
+      this.router.navigate(['/main', {outlets: {middle: 'newsfeed/'}}]);
+
     } else {
       // CREATE
       const newpost = new Post(form.value.content, form.value.author, null);

@@ -122,7 +122,7 @@ router.patch('/:id', (req, res) => {
         })
       }
       post.content = req.body.content;
-      post.author = req.body.author;
+      post.author = req.body.userId;
       post.save((err, result) => {
         if (err) {
           return res.status(500).json({

@@ -7,4 +7,4 @@
 <div class="ui clearing"><br></div>
 <app-newsfeed-new [hidden]="!showForm" (cancel)="onCancel($event)"></app-newsfeed-new>
 
-<app-newsfeed-item *ngFor="let post of posts" [post]="post"></app-newsfeed-item>
+<app-newsfeed-item *ngFor="let post of posts" [post]="post"><div class="ui loader"></div></app-newsfeed-item>
