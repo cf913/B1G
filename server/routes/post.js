@@ -100,8 +100,7 @@ router.post('/', (req, res) => {
 // Update post
 router.patch('/:id', (req, res) => {
   let decoded = jwt.decode(req.query.token)
-  Post.findById(req.params.id)
-    .exec((err, post) => {
+  Post.findById(req.params.id, (err, post) => {
       if (err) {
         return res.status(500).json({
           title: 'An error occured',
@@ -114,6 +113,8 @@ router.patch('/:id', (req, res) => {
           error: 'Post not found'
         })
       }
+      console.log(decoded.user._id)
+      console.log(post.author)
       if (post.author != decoded.user._id) {
         return res.status(401).json({
           title: 'Not Authenticated',

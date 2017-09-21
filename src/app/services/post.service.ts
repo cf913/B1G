@@ -24,11 +24,8 @@ export class PostService {
         const result = response.json();
         const post = new Post(
           result.obj.content,
-          result.obj.author.username,
-          result.obj._id,
-          result.obj.author._id);
+          result.obj.author);
         this.posts.push(post);
-        return post;
       })
       .catch((error: Response) => Observable.throw(error.json()));
 
@@ -84,7 +81,7 @@ export class PostService {
     // return this.http.patch('http://synerg.herokuapp.com/post/' + post.postId, body, {headers: headers})
     return this.http.patch('/post/' + post.postId + token, body, {headers: headers})
       .map((response: Response) => response.json())
-      .catch((error: Response) => Observable.throw(error.json()));
+      .catch((error: Response) => Observable.throw('There is a cow'));
   }
 
   deletePost(post: Post) {
