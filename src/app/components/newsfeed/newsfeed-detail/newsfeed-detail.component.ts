@@ -42,7 +42,6 @@ export class NewsfeedDetailComponent implements OnInit {
     this.postService.deletePost(this.post)
       .subscribe(result => {
         console.log(result);
-        this.router.navigate(['/main', {outlets: {middle: 'newsfeed'}}]);
       });
 
 } postIsUsers() {
