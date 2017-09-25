@@ -33,7 +33,7 @@ import { NewsfeedListComponent } from './components/newsfeed/newsfeed-list/newsf
 import { NewsfeedItemComponent } from './components/newsfeed/newsfeed-item/newsfeed-item.component';
 import { NewsfeedDetailComponent } from './components/newsfeed/newsfeed-detail/newsfeed-detail.component';
 import { NewsfeedNewComponent } from './components/newsfeed/newsfeed-new/newsfeed-new.component';
-// RIGHT
+    // RIGHT
 import { UserComponent } from './components/user/user.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 import { FriendsListComponent } from './components/user/friends-list/friends-list.component';
@@ -47,6 +47,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PlayerService } from './services/player.service';
 import { PostService } from './services/post.service';
 import { AuthService } from './services/auth.service';
+import { TeamService } from './services/team.service';
 // GUARDS
 // import { AuthGuard } from './guards/authgard';
 
@@ -96,7 +97,7 @@ import { AuthService } from './services/auth.service';
     PlayerService,
     PostService,
     AuthService,
-    // AuthGuard,
+    TeamService
   ],
   bootstrap: [AppComponent]
 })
